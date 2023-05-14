@@ -16,7 +16,7 @@ without needing a server as an intermediary.
 
 # Features
 - **Real-Time Timer**: The application starts tracking the time as soon as the page loads and continuously displays the elapsed time.
-- **Session Persistence**: The elapsed time is stored in the `sessionStorage` API, allowing the timer to persist even if the page is refreshed.
+- **Persistent Timer**: The elapsed time is stored in the browser's `localStorage`, allowing it to persist even if the page is refreshed.
 - **Broadcast Channel**: The application also uses the `BroadcastChannel` API to communicate the timer data with other instances of the same application running in different browser tabs.
 
 
