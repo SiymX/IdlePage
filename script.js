@@ -1,30 +1,27 @@
 let timer = document.getElementById("timer");
 
-
 const channel = new BroadcastChannel('timerChannel');
 
 let start;
 let elapsed;
-
 
 channel.onmessage = (event) => {
     start = event.data.start;
     elapsed = event.data.elapsed;
 };
 
-if (sessionStorage.getItem("start")) {
-    start = Number(sessionStorage.getItem("start"));
-    elapsed = Number(sessionStorage.getItem("elapsed"));
+if (localStorage.getItem("start")) {
+    start = Number(localStorage.getItem("start"));
+    elapsed = Number(localStorage.getItem("elapsed"));
 } else {
     start = Date.now();
-    sessionStorage.setItem("start", start);
+    localStorage.setItem("start", start);
 }
 
 let interval = setInterval(() => {
     elapsed = Date.now() - start;
-    sessionStorage.setItem("elapsed", elapsed);
+    localStorage.setItem("elapsed", elapsed);
 
-    
     channel.postMessage({start: start, elapsed: elapsed});
 
     let totalSeconds = Math.floor(elapsed / 1000);
