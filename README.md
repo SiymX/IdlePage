@@ -1,3 +1,6 @@
+![idlepageGIT](https://github.com/SiymX/IdlePage/assets/63435885/910bb240-99f0-4898-a94d-3fb7de5ff745)
+
+
 # IdlePage
 This program is a HTML page that will display elapsed time (Stopwatch Timer) in hours, minutes, seconds, and milliseconds. The `setInterval()` method is used to update the timer every 10 milliseconds.
 The timer will get updated by setting the `innerHTML` property of the `timer` element with a strong of HTML code that includes the time values and labels for each unit of time. 
